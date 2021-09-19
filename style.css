@@ -250,11 +250,11 @@ input::placeholder {
 }
 
 .main .title {
-  width: 45ch;
+  width: 80%;
   margin: auto;
 }
 
 .main .content {
-  width: 45ch;
+  width: 80%;
   margin: auto;
 }
