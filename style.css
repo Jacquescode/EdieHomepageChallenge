@@ -15,6 +15,21 @@
   --clr-gray6: #f2f2f2;
   --clr-primary: #2d9cdb;
   --clr-secondary: #eb5757;
+
+  --ff-small: 0.625em;
+  --ff-medium: 0.75em;
+  --ff-h3: 1.125em;
+  --ff-large: 1.5em;
+  --ff-xl: 2em;
+}
+@media (min-width: 40em) {
+  :root {
+    --ff-small: 0.875em;
+    --ff-medium: 1.125em;
+    --ff-h3: 1.5em;
+    --ff-large: 2.25em;
+    --ff-xl: 3em;
+  }
 }
 
 * {
@@ -33,19 +48,35 @@ h4,
 h5,
 h6,
 p,
-ul {
+ul,
+a {
   margin: 0;
   padding: 0;
   font-family: var(--ff-primary);
 }
 
 h1 {
-  font-size: 2em;
+  font-size: var(--ff-xl);
   font-weight: 400;
 }
 
+h2 {
+  font-size: var(--ff-large);
+  font-weight: 400;
+}
+
+h3 {
+  font-size: var(--ff-h3);
+  font-weight: 500;
+}
+
+h4 {
+  font-size: var(--ff-medium);
+  font-weight: 300;
+  color: var(--clr-gray3);
+}
+
 p {
-  font-size: 16em;
   font-weight: 400;
   color: var(--clr-gray2);
 }
@@ -76,7 +107,7 @@ a {
 label {
   display: block;
   font-weight: 500;
-  font-size: 0.875em;
+  font-size: var(--ff-small);
 }
 
 input {
@@ -90,7 +121,7 @@ input {
 
 input::placeholder {
   color: var(--clr-gray4);
-  font-size: 0.875em;
+  font-size: var(--ff-small);
 }
 
 .input-ctn {
@@ -100,18 +131,24 @@ input::placeholder {
 .input-ctn button {
   position: absolute;
   padding: 0 2em;
-  left: 11rem;
+  left: 12.5rem;
   top: 0rem;
   bottom: 0;
   border: 0;
   border-radius: 12px;
   color: var(--clr-gray6);
   background-color: var(--clr-primary);
-  font-size: 0.875em;
+  font-size: var(--ff-small);
 }
 
 .container {
   margin: 4rem 0;
+}
+
+@media (min-width: 65em) {
+  .container {
+    margin: 4rem;
+  }
 }
 
 .--light {
@@ -129,6 +166,15 @@ input::placeholder {
 
 .flow-content > * + * {
   margin-top: 2rem;
+}
+
+nav,
+.links {
+  z-index: 2;
+}
+
+header {
+  margin: 2rem 0;
 }
 
 .nav-header {
@@ -245,16 +291,96 @@ input::placeholder {
   }
 }
 
+.main .container {
+  margin: 4rem 0;
+}
+
 .main p {
-  font-size: 1.125em;
+  font-size: var(--ff-medium);
 }
 
 .main .title {
   width: 80%;
+  max-width: 70ch;
   margin: auto;
 }
 
 .main .content {
   width: 80%;
+  max-width: 70ch;
   margin: auto;
+}
+
+.main img {
+  min-height: 200px;
+  object-fit: cover;
+}
+
+.service-ctn {
+  margin: 1rem;
+  padding: 1.2rem;
+}
+
+@media (min-width: 55em) {
+  .services-ctn {
+    display: flex;
+  }
+}
+
+.services header {
+  margin: 2rem 2.2rem;
+}
+
+.service-ctn span {
+  color: #fff;
+  padding: 0.5em;
+  border-radius: 16px;
+}
+
+.--blue {
+  background-color: var(--clr-primary);
+}
+
+.--green {
+  background-color: #27ae60;
+}
+
+.--red {
+  background-color: var(--clr-secondary);
+}
+
+.service-ctn h3 {
+  font-weight: 700;
+  color: var(--clr-gray1);
+}
+
+.service-ctn p {
+  font-weight: 400;
+  color: var(--clr-gray2);
+}
+
+.service-ctn button {
+  border: 0;
+  background-color: var(--clr-gray5);
+  border-radius: 12px;
+  padding: 1em 2em;
+  color: var(--clr-gray3);
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+.selected {
+  box-shadow: 0px 10px 30px rgba(51, 51, 51, 0.1);
+  border-radius: 24px;
+}
+
+.selected button {
+  background-color: var(--clr-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.design a {
+  font-size: var(--ff-h3);
+  font-weight: 500;
 }
