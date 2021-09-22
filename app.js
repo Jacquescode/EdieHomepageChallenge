@@ -5,10 +5,20 @@ const i = document.querySelector(".fas");
 
 navOpen.addEventListener("click", function () {
   links.classList.add("show-links");
-  //i.classList.toggle("fa-times");
 });
 
 navClose.addEventListener("click", function () {
   links.classList.remove("show-links");
-  //i.classList.toggle("fa-times");
 });
+
+window.onscroll = () => {
+  if (window.pageYOffset > 50) {
+    document
+      .getElementById("navbar")
+      .classList.add("navbar--color-background");
+  } else {
+    document
+      .getElementById("navbar")
+      .classList.remove("navbar--color-background");
+  }
+}
